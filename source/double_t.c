@@ -3,5 +3,6 @@
 #include <string.h>
 #include "double_t.h"
 
+#include "double_t.h"
 #include "converteNativo.c"
 
