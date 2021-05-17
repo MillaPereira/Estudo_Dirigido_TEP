@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "double_t.h"
-#include "converteNativo.h"
+
 #include "tiposFuncoes.h"
+#include "double_t.h"
+#include "integer_t.h"
 
 int main (){
+
     double a=5.0,b=6.0;
     void * vet[2];
     void * ptc;
@@ -34,4 +36,6 @@ int main (){
     Double_destruir( ptd, free);
     Double_destruir( soma, free);
     exit(0);
+
+    return 0;
 }
