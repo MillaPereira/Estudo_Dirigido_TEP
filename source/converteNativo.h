@@ -17,7 +17,17 @@ void PREF_(set) (void * amim, NATIVO_ * valor);
 
 NATIVO_ PREF_(get) (void * demim);
 
-void * PREF_(somar) (void * a, void *b, void *soma);
+void * PREF_(somar) (void * a, void *b, void *resultado);
+
+void * PREF_(subtrair) (void * a, void *b, void *resultado);
+
+void * PREF_(dividir) (void * a, void *b, void *resultado);
+
+void * PREF_(multiplicar) (void * a, void *b, void *resultado);
+
+void * PREF_(elevarAoQuadrado) (void * a, void *resultado);
+
+void * PREF_(raizQuadrada) (void * a, void *resultado);
 
 void PREF_(destruir) (void * amim, func0_1void_t liberar);
 
