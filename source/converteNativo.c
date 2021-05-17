@@ -1,8 +1,11 @@
+#ifdef PREF_
+#ifdef NATIVO_
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 #include "converteNativo.h"
-#include "tiposFuncoes.h"
 
 struct PREF_(st){
     NATIVO_ valor;
@@ -56,3 +59,50 @@ void * PREF_(somar) (void * a, void *b, void *resultado){
     PREF_(set) (resultado, &avalue);
     return ((void *) resultado);
 }
+
+void * PREF_(subtrair) (void * a, void *b, void *resultado){
+    NATIVO_ avalue = PREF_(get) (a);
+    NATIVO_ bvalue = PREF_(get) (b);
+    avalue -= bvalue;
+    PREF_(set) (resultado, &avalue);
+    return ((void *) resultado);
+}
+
+void * PREF_(dividir) (void * a, void *b, void *resultado){
+    NATIVO_ avalue = PREF_(get) (a);
+    NATIVO_ bvalue = PREF_(get) (b);
+    avalue /= bvalue;
+    PREF_(set) (resultado, &avalue);
+    return ((void *) resultado);
+}
+
+void * PREF_(multiplicar) (void * a, void *b, void *resultado){
+    NATIVO_ avalue = PREF_(get) (a);
+    NATIVO_ bvalue = PREF_(get) (b);
+    avalue *= bvalue;
+    PREF_(set) (resultado, &avalue);
+    return ((void *) resultado);
+}
+
+void * PREF_(elevaAoQuadrado) (void * a, void *resultado){
+    NATIVO_ avalue = PREF_(get) (a);
+    avalue *= avalue;
+    PREF_(set) (resultado, &avalue);
+    return ((void *) resultado);
+}
+
+void * PREF_(raizQuadrada) (void * a, void *resultado){
+    NATIVO_ avalue = PREF_(get) (a);
+    if (avalue > 0){
+      avalue = sqrt(avalue);
+      PREF_(set) (resultado, &avalue);
+      return ((void *) resultado);
+    }
+    avalue = -1;
+    printf ("O valor nao eh positivo");
+    PREF_(set) (resultado, &avalue);
+    return((void *) resultado);
+}
+
+#endif
+#endif
