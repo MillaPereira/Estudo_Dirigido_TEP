@@ -1,3 +1,6 @@
+#ifndef FUNCOES_H
+#define FUNCOES_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -11,3 +14,4 @@ typedef void * (* func1_2void_1size_t) (void * restrict um, const void * restric
 /* typedef do free */
 typedef void (* func0_1void_t) (void *um);
 
+#endif
